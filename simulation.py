@@ -38,8 +38,8 @@ def simulate_queue(n):
     arrival['process_duration'] = np.random.beta(2, 5, size=n)*3.5
 
     # Initial condition: empty queue
-    arrival = arrival.set_value(0, 'departure_time',
-                                arrival.loc[0, 'arrival_time'] + arrival.loc[0, 'process_duration'])
+    arrival.set_value(0, 'departure_time',
+                      arrival.loc[0, 'arrival_time'] + arrival.loc[0, 'process_duration'])
 
     for i in range(1, n):
         """
